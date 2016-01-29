@@ -23,7 +23,9 @@
 		<div class="col-md-12">
 			<div class="modal-dialog" style="margin-bottom: 0">
 				<div class="modal-content">
-					<div class="panel-heading"> <h2>Cadastro de Aluno</h2></div>
+					<div class="panel-heading">
+						<h3 class="panel-title">Cadastro de Aluno</h3>
+					</div>
 					<div class="panel-body">
 						<form role="form">
 							<fieldset>
@@ -42,18 +44,24 @@
 									<input class="form-control" placeholder="CPF" name="cpf"
 										type="text" value="${param.cpf}">
 								</div>
-								<input type="submit" class="btn btn-sm btn-success" value="Incluir">
+								
+								<input type="submit" class="btn btn-success" name="acao" value="Pesquisar">								
+								<input type="submit" class="btn btn-primary" name="acao" value="Incluir">									
+								<input type="submit" class="btn btn-warning" name="acao" value="Alterar"> 
+								<input type="submit" class="btn btn-danger" name="acao" value="Remover">
+							
 							</fieldset>
 						</form>
 						<br>
-						<%
+					<%
 							//Obtendo a variável definida no servlet.
 							bancodados.cadastroaluno.Aluno aluno = (bancodados.cadastroaluno.Aluno) request.getAttribute("aluno");
 							//Se parâmetros inválidos, ...
 							if (aluno.getMatricula() == null || aluno.getMatricula().trim().equals("")) {
 						%>
 						<!-- Aqui posso colocar HTML. -->
-						<div class="alert alert-danger" role="alert">Informe a Matrícula.</div>
+						<div class="alert alert-danger" role="alert">Informe a
+							Matrícula.</div>
 						<%
 							} else {
 						%>
@@ -71,7 +79,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
