@@ -23,25 +23,25 @@ public class Aluno {
 
   public void incluir() {
     try {
-      //Obt√©m a conex√£o.
+      //ObtÈm a conex„o.
       String url = "jdbc:derby:C:\\banco-de-teste;create=true";
       Connection conn = DriverManager.getConnection(url);
-      //Cria a senten√ßa SQL.
+      //Cria a sentenÁa SQL.
       String sql = "insert into aluno (matricula, nome, fone, cpf) values (?, ?, ?, ?)";
-      //Obt√©m refer√™ncia para uma senten√ßa SQL.
+      //ObtÈm referÍncia para uma sentenÁa SQL.
       PreparedStatement prepareStatement = conn.prepareStatement(sql);
       prepareStatement.setString(1, matricula);
       prepareStatement.setString(2, nome);
       prepareStatement.setString(3, fone);
       prepareStatement.setString(4, cpf);
-      //Executa a instru√ß√£o SQL.
+      //Executa a instruÁ„o SQL.
       prepareStatement.executeUpdate();
       //Fecha a senten√ßa.
       prepareStatement.close();
-      //Fecha a conex√£o.
+      //Fecha a conex„o.
       conn.close();
     } catch(Throwable e) {
-      //Para repassar a exce√ß√£o para o container tratar.
+      //Para repassar a exceÁ„o para o container tratar.
       throw new RuntimeException(e);
     }
   }
