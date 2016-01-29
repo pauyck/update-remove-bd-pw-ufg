@@ -21,8 +21,9 @@ public class BancoDados {
 
 //    conn.setAutoCommit(false);
 //    try {
-      //OperaÁ„o de dÈbito.
-      //OperaÁ„ocommit();
+      //Opera√ß√£o de d√©bito.
+      //Opera√ß√£o de cr√©dito.
+//      conn.commit();
 //    } catch (Throwable e) {
 //      conn.rollback();
 //    }
